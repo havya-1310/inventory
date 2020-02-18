@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class ProductFunController {
@@ -35,4 +36,13 @@ public class ProductFunController {
         return productFun.search(query);
     }
 
+    /*@GetMapping("/xyz")
+    public List<Map<String,Object>>xyz(){
+        return this.productFun.searchLearn() ;
+    }*/
+
+    @GetMapping("/abc")
+    public List<Map<String,Object>> abc(){
+        return this.productFun.addAggregation() ;
+    }
 }

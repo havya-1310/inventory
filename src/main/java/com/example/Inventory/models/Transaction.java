@@ -15,14 +15,24 @@ public class Transaction implements Comparable<Transaction> {
     private int qty = 0;
     private int price = 0;
     private Date timeStamp = new Date();
+    private int availableQty = 0 ;
 
-    public Transaction(String prodId, String vendorId, int qty, int price, Date timeStamp) {
+    public int getAvailableQty() {
+        return availableQty;
+    }
+
+    public void setAvailableQty(int availableQty) {
+        this.availableQty = availableQty;
+    }
+
+    public Transaction(String prodId, String vendorId, int qty, int price, Date timeStamp, int availableQty) {
         this.transaction_id =  UUID.randomUUID().toString() ;
         this.prodId = prodId;
         this.vendorId = vendorId;
         this.qty = qty;
         this.price = price;
         this.timeStamp = timeStamp;
+        this.availableQty = availableQty ;
     }
 
     public String getTransaction_id() {

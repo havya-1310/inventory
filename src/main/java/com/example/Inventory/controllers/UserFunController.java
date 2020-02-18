@@ -89,6 +89,7 @@ public class UserFunController {
     @GetMapping("/inventory/user/logout")
     public boolean userLogout(HttpServletRequest request) {
         request.getSession().removeAttribute("token");
+        System.out.println("Logged out successfully");
         return true;
     }
 
